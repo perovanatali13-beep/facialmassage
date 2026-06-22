@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { course } from "@/lib/course";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import CourseLogout from "../components/CourseLogout";
 
 export const metadata: Metadata = {
   title: "Курс самомассажа лица — уроки",
@@ -86,6 +87,10 @@ export default function CoursePage() {
             >
               Пройти тест на тип кожи
             </Link>
+          </div>
+
+          <div className="mt-8 text-center">
+            <CourseLogout />
           </div>
         </div>
       </section>
