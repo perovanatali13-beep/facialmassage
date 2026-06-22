@@ -56,8 +56,10 @@ export default async function LessonPage({
         </h1>
 
         {lesson.videoFile ? (
-          <div className="mt-8 aspect-video overflow-hidden rounded-soft bg-black">
-            <LessonVideo src={`/api/video/${lesson.id}`} />
+          <div className="mt-8 flex justify-center">
+            <div className="aspect-[9/16] w-full max-w-xs overflow-hidden rounded-soft bg-black shadow-lg sm:max-w-sm">
+              <LessonVideo src={lesson.videoFile} />
+            </div>
           </div>
         ) : lesson.videoUrl ? (
           <div className="mt-8 aspect-video overflow-hidden rounded-soft bg-black">
