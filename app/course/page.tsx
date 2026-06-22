@@ -66,6 +66,30 @@ export default function CoursePage() {
         </div>
       </section>
 
+      {/* Переход к тесту на тип кожи — после самого курса */}
+      <section className="pb-24">
+        <div className="mx-auto max-w-3xl px-5">
+          <div className="rounded-soft bg-espresso px-6 py-10 text-center text-cream shadow-sm sm:px-10">
+            <p className="text-sm font-medium uppercase tracking-wide text-rose">
+              Бонус к курсу
+            </p>
+            <h2 className="mt-3 font-display text-2xl font-semibold sm:text-3xl">
+              Определите свой тип кожи
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-cream/80">
+              Пройдите анкету по классификации Лесли Бауманн — узнайте свой тип кожи
+              и получите персональные рекомендации по уходу.
+            </p>
+            <Link
+              href="/course/test"
+              className="mt-7 inline-block rounded-full bg-terracotta px-8 py-3 font-medium text-white transition hover:bg-clay"
+            >
+              Пройти тест на тип кожи
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <SiteFooter />
     </>
   );
