@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { course } from "@/lib/course";
 import SiteHeader from "../../components/SiteHeader";
 import SiteFooter from "../../components/SiteFooter";
+import LessonVideo from "../../components/LessonVideo";
 
 export function generateStaticParams() {
   return course.lessons.map((l) => ({ id: l.id }));
@@ -32,9 +33,6 @@ export default async function LessonPage({
   const prev = course.lessons[idx - 1];
   const next = course.lessons[idx + 1];
 
-  // Прямой видеофайл (mp4/mov/webm) показываем плеером, иначе — встраиваем (iframe).
-  const isVideoFile = /\.(mp4|mov|webm|m4v)(\?|$)/i.test(lesson.videoUrl);
-
   return (
     <>
       <SiteHeader />
@@ -57,16 +55,9 @@ export default async function LessonPage({
           {lesson.title}
         </h1>
 
-        {lesson.videoUrl && isVideoFile ? (
+        {lesson.videoFile ? (
           <div className="mt-8 aspect-video overflow-hidden rounded-soft bg-black">
-            <video
-              src={lesson.videoUrl}
-              controls
-              controlsList="nodownload"
-              playsInline
-              preload="metadata"
-              className="h-full w-full bg-black"
-            />
+            <LessonVideo src={`/api/video/${lesson.id}`} />
           </div>
         ) : lesson.videoUrl ? (
           <div className="mt-8 aspect-video overflow-hidden rounded-soft bg-black">
