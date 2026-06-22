@@ -66,7 +66,7 @@ export const content = {
   },
   pricing: {
     title: "Стоимость",
-    price: "3 900 ₽",
+    price: "1 000 ₽",
     features: [
       "Постоянный доступ к курсу",
       "7 дней пошаговой практики",
